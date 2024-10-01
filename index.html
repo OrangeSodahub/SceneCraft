@@ -194,13 +194,13 @@
 
             <div class="content is-full-width">
                 <p>We demonstrate DreamScene's
-                    ability to generate more complex indoor scenes leveraging arbitrary camera trajectories. Such non-
-                    regular shape of room cannot be naturally achieved by previous works.</p>
+                    ability to generate more complex indoor scenes leveraging arbitrary camera trajectories. Such non-regular
+                    shape of room cannot be naturally achieved by previous works.</p>
             </div>
   
-            <div class="content has-text-centered">
+            <!-- <div class="content has-text-centered">
                 <img src="./static/images/add_scenes.png" alt="Teaser Image" style="width: 90%; height: auto;">
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -234,45 +234,102 @@
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Video</h2>
+        <h2 class="title is-3"></h2>
 
         <div class="content has-text-centered">
             <div class="row"></div>
 
-                <div style="max-width: 100%; width: 100%;">
+            <div style="max-width: 100%; width: 100%;">
+                <div id="displayArea" style="width: 100%; height: auto;">
+                    <video style="width: 100%; height: auto; display: none;" playsinline="" autoplay="" loop="" muted="" id="gallery">
+                        <source src="./static/videos/Scene B.mp4" type="video/mp4">
+                    </video>
+                    <img id="imageDisplay" src="./static/videos/Scene C.png" alt="Scene Image" style="width: 100%; height: auto; display: none;">
+                </div><p></p>
+                <p><b id="scene_name">Generated Scene: B</b></p>
+            </div>
+        
+            <script>
+                window.onload = function() {
+                    showScene('Scene B', 'Generated Scene: B');
+                };
+
+                function showScene(video, scene_name) {
+                    document.getElementById("gallery").src = "./static/videos/" + video + ".mp4";
+                    document.getElementById("gallery").style.display = 'block';
+                    document.getElementById("imageDisplay").style.display = 'none';
+                    document.getElementById("scene_name").innerHTML = scene_name;
+                    document.getElementById("gallery").play();
+                }
+        
+                function showImage(image, scene_name) {
+                    document.getElementById("imageDisplay").src = "./static/videos/" + image + ".png";
+                    document.getElementById("imageDisplay").style.display = 'block';
+                    document.getElementById("gallery").style.display = 'none';
+                    document.getElementById("scene_name").innerHTML = scene_name;
+                }
+                </script>
+            
+                <!-- <div style="max-width: 100%; width: 100%;">
                     <div class="text-left" style="width: 100%; margin-top: 10px;">
-                        <label for="video_selector">Choose a scene to show:</label>
-                        <select id="video_selector" onchange="onDropdownChange()" style="width: 10%;">
-                        <option data-video="Scene A" data-scene="A">Scene A</option>
-                        <option data-video="Scene B" data-scene="B" selected>Scene B</option>
-                        </select>
+                        <button onclick="showScene('Scene A', 'Generated Scene: A')" class="button is-normal is-rounded">Scene A</button>
+                        <button onclick="showScene('Scene B', 'Generated Scene: B')" class="button is-normal is-rounded">Scene B</button>
+                        <button onclick="showImage('Scene C', 'Generated Scene: C')" class="button is-normal is-rounded">Scene C</button>
+                        <button onclick="showImage('Scene D', 'Generated Scene: D')" class="button is-normal is-rounded">Scene D</button>
+                    </div>
+                </div> -->
+
+                <div class="container" id="main">
+                    <div class="row">
+                        <div class="text-center" style="margin-top: 50px;">
+                            <ul class="nav nav-pills nav-justified" style="display: flex; justify-content: space-around; padding: 0; list-style: none;">
+                                <li style="flex: 1; text-align: center;">
+                                    <a href="javascript:showScene('Scene A', 'Generated Scene: A')" class="button-item">
+                                        <img src="./static/images/Scene A.png" style="max-width: 100px; height: auto;" />
+                                        <h4><strong>Scene A</strong></h4>
+                                    </a>
+                                </li>
+                                <li style="flex: 1; text-align: center;">
+                                    <a href="javascript:showScene('Scene B', 'Generated Scene: B')" class="button-item">
+                                        <img src="./static/images/Scene B.png" style="max-width: 120px; height: auto;" />
+                                        <h4><strong>Scene B</strong></h4>
+                                    </a>
+                                </li>
+                                <li style="flex: 1; text-align: center;">
+                                    <a href="javascript:showImage('Scene C', '')" class="button-item">
+                                        <img src="./static/images/Scene C.png" style="max-width: 49px; height: auto;" />
+                                        <h4><strong>Scene C</strong></h4>
+                                    </a>
+                                </li>
+                                <li style="flex: 1; text-align: center;">
+                                    <a href="javascript:showImage('Scene D', '')" class="button-item">
+                                        <img src="./static/images/Scene D.png" style="max-width: 74px; height: auto;" />
+                                        <h4><strong>Scene D</strong></h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div style="max-width: 100%; width: 100%;">
-                <video style="width: 100%; height: auto; max-height: 500px;" playsinline="" autoplay="" loop="" muted="" id="gallery">
-                    <source src="./static/videos/Scene B.mp4" type="video/mp4">
-                </video>
-                </div>
-                <p><b id="scene_name">Generated Scene: B</b></p>
-        
-                <script>
-                    function replace_gallery(video, scene_name) {
-                        document.getElementById("gallery").src = "./static/videos/" + video + ".mp4";
-                        document.getElementById("scene_name").innerHTML = "Generated Scene: " + scene_name + "";
+                <style>
+                    .button-item {
+                        display: inline-block;
+                        transition: box-shadow 0.3s ease, transform 0.3s ease;
+                        padding: 10px;
+                        border-radius: 10px;
+                        text-decoration: none;
+                        color: inherit;
                     }
-                    
-                    function onDropdownChange() {
-                    var selectElement = document.getElementById("video_selector");
-                    var selectedOption = selectElement.options[selectElement.selectedIndex];
-                    var video = selectedOption.getAttribute("data-video");
-                    var sceneName = selectedOption.getAttribute("data-scene");
-                    replace_gallery(video, sceneName);
-                    }
-                </script>
                 
-            </div>
+                    .button-item:hover {
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                        transform: translateY(-5px);
+                    }
+                </style>
+
         </div>
+
       </div>
     </div>
 
