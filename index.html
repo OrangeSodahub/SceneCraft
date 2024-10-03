@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DreamScene: Layout-Guided 3D Scene Generation">
+        content="SceneCraft: Layout-Guided 3D Scene Generation">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DreamScene: Layout-Guided 3D Scene Generation</title>
+  <title>SceneCraft: Layout-Guided 3D Scene Generation</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70ZFX22PT7"></script>
@@ -43,7 +43,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DreamScene: Layout-Guided 3D Scene Generation</h1>
+          <h1 class="title is-1 publication-title">SceneCraft: Layout-Guided 3D Scene Generation</h1>
           <div class="content has-text-centered" style="font-weight: bold; color: gray; font-size: 24px;">
             NeurIPS 2024
           </div>
@@ -79,7 +79,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://orangesodahub.github.io/DreamScene/"
+                <a href="https://orangesodahub.github.io/SceneCraft/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -89,7 +89,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/OrangeSodahub/DreamScene/"
+                <a href="https://github.com/OrangeSodahub/SceneCraft/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -140,7 +140,7 @@
             and challenging task with traditional 3D modeling tools. Although some pioneering
             methods have achieved automatic text-to-3D generation, they are generally
             limited to small-scale scenes with restricted control over the shape and texture.
-            We introduce DreamScene, a novel method for generating detailed indoor scenes
+            We introduce SceneCraft, a novel method for generating detailed indoor scenes
             that adhere to textual descriptions and spatial layout preferences provided by users.
             Central to our method is a rendering-based approach, which converts 3D semantic
             layout into multi-view 2D proxy maps. Furthermore, we design a semantic and
@@ -176,70 +176,23 @@
   <div class="container is-max-desktop">
 
     <!-- Gallery. -->
-    <div class="columns is-centered">
-        <div class="column is-full-width">
-            <h2 class="title is-3">Gallery</h2>
-
-            <div class="content is-full-width">
-              <p>For each sample we
-                demonstrate the 3D BBS, BBI semantic map and the generated scene RGB images and rendered depth map. We
-                show that our method is able to generate complex and free-form scenes from challenging room layouts.</p>
-            </div>
-
-            <div class="content has-text-centered">
-                <img src="./static/images/figxy-gallery.png" alt="Teaser Image" style="width: 90%; height: auto;">
-            </div>
-
-            <div class="content is-full-width">
-                <p>We demonstrate DreamScene's
-                    ability to generate more complex indoor scenes leveraging arbitrary camera trajectories. Such non-regular
-                    shape of room cannot be naturally achieved by previous works.</p>
-            </div>
-  
-            <!-- <div class="content has-text-centered">
-                <img src="./static/images/add_scenes.png" alt="Teaser Image" style="width: 90%; height: auto;">
-            </div> -->
-
-        </div>
-    </div>
     
-    <!-- Video. -->
-    <!-- <div class="columns is-centered">
+    <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Video</h2>
+          <h2 class="title is-3">Gallery</h2>
 
         <div class="content is-full-width">
-          <p>
-            We support rendering on free camera trajtories instead of rotation only.
-          </p>
+          <p>We demonstrate SceneCraft's
+              ability to generate more complex indoor scenes leveraging arbitrary camera trajectories. Such non-regular
+              shape of room cannot be naturally achieved by previous works.</p>
         </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-      </div>
-    </div> -->
-    <!--/ Video. -->
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3"></h2>
 
         <div class="content has-text-centered">
 
             <div style="max-width: 100%; width: 100%; text-align: center;">
                 <div id="displayArea" style="width: 85%; height: auto; margin: 0 auto;">
                     <video style="width: 100%; height: auto; display: none;" playsinline="" autoplay="" loop="" muted="" id="gallery">
-                        <source src="./static/videos/Scene B.mp4" type="video/mp4">
+                      <source src="./static/videos/Scene B.mp4" type="video/mp4">
                     </video>
                     <img id="imageDisplay" src="./static/videos/Scene C.png" alt="Scene Image" style="width: 100%; height: auto; display: none;">
                 </div><p></p>
@@ -275,11 +228,11 @@
                         <button onclick="showImage('Scene D', 'Generated Scene: D')" class="button is-normal is-rounded">Scene D</button>
                     </div>
                 </div> -->
-
+                
                 <div class="container" id="main">
                     <div class="row">
                         <div class="text-center" style="margin-top: 50px;">
-                            <ul class="nav nav-pills nav-justified" style="display: flex; justify-content: space-around; padding: 0; list-style: none;">
+                          <ul class="nav nav-pills nav-justified" style="display: flex; justify-content: space-around; padding: 0; list-style: none;">
                                 <li style="flex: 1; text-align: center;">
                                     <a href="javascript:showScene('Scene A', 'Generated Scene: A')" class="button-item">
                                         <img src="./static/images/Scene A.png" style="max-width: 120px; height: auto;" />
@@ -293,7 +246,7 @@
                                     </a>
                                 </li>
                                 <li style="flex: 1; text-align: center;">
-                                    <a href="javascript:showImage('Scene C', '')" class="button-item">
+                                  <a href="javascript:showImage('Scene C', '')" class="button-item">
                                         <img src="./static/images/Scene C.png" style="max-width: 58px; height: auto;" />
                                         <h4><strong>Scene C</strong></h4>
                                     </a>
@@ -302,10 +255,10 @@
                                     <a href="javascript:showImage('Scene D', '')" class="button-item">
                                         <img src="./static/images/Scene D.png" style="max-width: 90px; height: auto;" />
                                         <h4><strong>Scene D</strong></h4>
-                                    </a>
+                                      </a>
                                 </li>
                             </ul>
-                        </div>
+                          </div>
                     </div>
                 </div>
 
@@ -326,18 +279,66 @@
                 </style>
 
         </div>
-
+        
       </div>
     </div>
+    
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3"></h2>
+    
+            <div class="content is-full-width">
+              <p>For each sample we
+                demonstrate the 3D BBS, BBI semantic map and the generated scene RGB images and rendered depth map. We
+                show that our method is able to generate complex and free-form scenes from challenging room layouts.</p>
+            </div>
+    
+            <div class="content has-text-centered">
+                <img src="./static/images/figxy-gallery.png" alt="Teaser Image" style="width: 90%; height: auto;">
+            </div>
+    
+            <!-- <div class="content has-text-centered">
+                <img src="./static/images/add_scenes.png" alt="Teaser Image" style="width: 90%; height: auto;">
+            </div> -->
+    
+        </div>
+    </div>
+    
+    <!-- Video. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+    
+        <div class="content is-full-width">
+          <p>
+            We support rendering on free camera trajtories instead of rotation only.
+          </p>
+        </div>
+    
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    
+      </div>
+    </div> -->
+    <!--/ Video. -->
 
   </div>
 </section>
 
 
 <section class="section">
-    <div class="container is-max-desktop">
+  <div class="container is-max-desktop">
   
-      <div class="columns is-centered">
+    <div class="columns is-centered">
           <div class="column is-full-width">
   
             <p>For more analysis and examples of our method, please refer to our paper.</p>
@@ -353,7 +354,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{TBD,
-        title={DreamScene: Layout-Guided 3D Scene Generation},
+        title={SceneCraft: Layout-Guided 3D Scene Generation},
         author={Yang, Xiuyu and Man, Yunze and Chen, JunKun and Wang, Yu-Xiong},
         journal={arXiv preprint arXiv:TBD},
         year={2024}
