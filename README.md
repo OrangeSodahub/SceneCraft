@@ -22,7 +22,7 @@ We introduce SceneCraft, an innovative framework for generating complex, detaile
 If you find our work useful in your research, please consider citing our paper:
 ```bibtex
 @article{TBD,
-      title={Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding},
+      title={SceneCraft: Layout-Guided 3D Scene Generation},
       author={Yang, Xiuyu and Man, Yunze and Chen, Jun-Kun and Wang, Yu-Xiong},
       journal={arXiv preprint arXiv:TBD},
       year={2024} 
