@@ -125,9 +125,11 @@ bash scripts/train_controlnet_sd.sh hypersim --condition_type one_hot --conditio
 We use nerfacto from nerfstudio as the scene models. To generate a scene:
 1) get its raw data (bouding boxes, labels and cameras);
 2) get its layout data (semantic/depth images and jsonl file);
-3) get its scene model.
+3) train its scene model.
 
-**Step1**: this step is only needed for **scene layout drawn by ourselves**. Use this [webviewer](https://orangesodahub.github.io/nerfstudio/) to create your own layout, then export the layout and camera data files to `ROOT/data/custom/(scene_id)/` which should be:
+**Step1**: this step is only needed for **scene layout drawn by ourselves**.
+
+Use this [webviewer](https://orangesodahub.github.io/nerfstudio/) to create your own layout, then export the layout and camera data files to `ROOT/data/custom/(scene_id)/` which should be:
 
 ```text
 data
@@ -148,8 +150,9 @@ bash scripts/generate_outputs.py \
 ```
 
 **Step3**: *(More specific instructions will be provided)*
+More training details could be found in Supp. (Sec.A) of our paper. This training step requires at least **TWO** GPUs (GPU0 hosts scene model and GPU1,2,... host diffusion model).
 
-More training details could be found in Supp. (Sec.A) of our paper. This training step requires at least **TWO** GPUs (GPU0 hosts scene model and GPU1,2,... host diffusion model). Check the configurations at `scenecraft/configs/method` and run the following script:
+Check the configurations at `scenecraft/configs/method` and run the following script:
 
 ```bash
 # set RECORD to track results via wandb
