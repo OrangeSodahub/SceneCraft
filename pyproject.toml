@@ -1,0 +1,18 @@
+[project]
+name = "nerfstudio-register-new"
+version = "1.0"
+
+dependencies=[]
+
+[tool.setuptools.packages.find]
+include = []
+
+[project.scripts]
+ns-train = "scenecraft.entrypoint.train:entrypoint"
+
+[project.entry-points.'nerfstudio.dataparser_configs']
+scenecraft-dataparser = 'scenecraft.configs.dataparser:dataparser'
+
+[project.entry-points.'nerfstudio.method_configs']
+scenecraft-nerfacto-big2 = 'scenecraft.configs.method:scenecraft_method_nerfacto_big2'
+scenecraft-nerfacto-huge2 = 'scenecraft.configs.method:scenecraft_method_nerfacto_huge2'
