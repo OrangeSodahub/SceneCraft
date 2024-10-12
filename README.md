@@ -9,6 +9,8 @@
 
 
 ## About
+### TL;DR We generate realistic 3D scenes given <span style="color: red">free-defined layout</span> and <span style="color: red">viewpoints</span>.
+
 <img src="assets/teaser.gif" width="100%"/>
 We introduce SceneCraft, an innovative framework for generating complex, detailed indoor scenes from textual descriptions and spatial layouts. By leveraging a rendering-based pipeline, and a layout-conditioned diffusion model, our work effectively converts 3D semantic layouts into multi-view 2D images and learns a final scene representation that is not only consistent and realistic but also adheres closely to user specifications. Please check out project page and paper for more details. The open-source release of our code and dataset promises to further empower research and development in this exciting domain. <br><br>
 
