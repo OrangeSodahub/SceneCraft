@@ -5,7 +5,7 @@
 <a href="https://scholar.google.com/citations?user=_m5__wUAAAAJ" style="color:blue;">Jun-Kun Chen</a> ·
 <a href="https://yxw.web.illinois.edu/" style="color:blue;">Yu-Xiong Wang</a>
 
-**[NeurIPS 2024]** [[`Project Page`](https://orangesodahub.github.io/SceneCraft/)] [[`arXiv`](http://arxiv.org/abs/)] [[`pdf`](https://arxiv.org/pdf/)] [[`BibTeX`](#BibTex)] [[`License`](https://github.com/OrangeSodahub/SceneCraft?tab=MIT-1-ov-file)]
+**[NeurIPS 2024]** [[`Project Page`](https://orangesodahub.github.io/SceneCraft/)] [[`arXiv`](http://arxiv.org/abs/2410.09049)] [[`pdf`](https://arxiv.org/pdf/2410.09049)] [[`BibTeX`](#BibTex)] [[`License`](https://github.com/OrangeSodahub/SceneCraft?tab=MIT-1-ov-file)]
 
 
 ## About
