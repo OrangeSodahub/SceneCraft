@@ -125,7 +125,7 @@ bash scripts/train_controlnet_sd.sh hypersim --condition_type one_hot --conditio
 ## Train SceneCraft Model
 
 We use nerfacto from nerfstudio as the scene models. To generate a scene:
-1) get its raw data (bouding boxes, labels and cameras);
+1) get its raw data (bounding boxes, labels and cameras);
 2) get its layout data (semantic/depth images and jsonl file);
 3) train its scene model.
 
