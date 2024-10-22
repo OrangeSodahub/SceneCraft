@@ -11,6 +11,6 @@ fi
 BASE_MODEL_PATH="runwayml/stable-diffusion-v1-5"
 
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-python $(dirname "$0")/../dreamscene/finetune/inference_controlnet_sd.py \
+python $(dirname "$0")/../scenecraft/finetune/inference_controlnet_sd.py \
     --dataset="$DATASET" \
     --base_model_path="$BASE_MODEL_PATH" ${@:2}

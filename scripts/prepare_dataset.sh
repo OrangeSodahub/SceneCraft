@@ -61,7 +61,7 @@ python -m torch.distributed.run \
     --master_addr="$MASTER_ADDR" \
     --nproc_per_node="$GPUS" \
     --master_port="$PORT" \
-    $(dirname "$0")/../dreamscene/renderer.py \
+    $(dirname "$0")/../scenecraft/renderer.py \
     --dataset="$DATASET" \
     --raw-data-root=$RAW_DATA_ROOT \
     --data-root=$DATA_ROOT \

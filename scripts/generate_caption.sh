@@ -34,5 +34,5 @@ fi
 
 
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-python $(dirname "$0")/../dreamscene/finetune/prepare_dataset.py \
+python $(dirname "$0")/../scenecraft/finetune/prepare_dataset.py \
             --dataset="$DATASET" --data-root="$DATA_ROOT" --output-path="$OUTPUT_PATH" --jsonl-path="$JSONL_PATH" --generate-caption ${@:3}

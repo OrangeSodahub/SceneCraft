@@ -768,30 +768,12 @@ def main():
 
 ################################ CLIP SCORE, INCEPTION SCORE ##########################
 metas = [
-    {"dataset": "hypersim", "scene_id": "ai_001_006", "save_id": 0},
-    {"dataset": "hypersim", "scene_id": "ai_001_008", "save_id": 0},
-    {"dataset": "hypersim", "scene_id": "ai_010_004", "save_id": 0},
-    {"dataset": "hypersim", "scene_id": "ai_010_004", "save_id": 1},
-    {"dataset": "hypersim", "scene_id": "ai_010_004", "save_id": 2},
-    {"dataset": "hypersim", "scene_id": "ai_010_005", "save_id": 0},
-    {"dataset": "hypersim", "scene_id": "ai_012_005", "save_id": 0},
-    {"dataset": "hypersim", "scene_id": "ai_035_001", "save_id": 1},
-    {"dataset": "custom", "scene_id": "exp5", "save_id": 1},
-    {"dataset": "custom", "scene_id": "exp5", "save_id": 2},
-    {"dataset": "custom", "scene_id": "exp5", "save_id": 3},
-    {"dataset": "custom", "scene_id": "exp5", "save_id": 6},
+    {"dataset": "", "scene_id": "", "save_id": 0},
 ]
 
 ################################### FID, KID ##########################################
 metas = [
-    {"dataset": "hypersim", "scene_id": "ai_001_001"},
-    # {"dataset": "hypersim", "scene_id": "ai_001_008"},
-    # {"dataset": "hypersim", "scene_id": "ai_010_004"},
-    # {"dataset": "hypersim", "scene_id": "ai_010_004"},
-    # {"dataset": "hypersim", "scene_id": "ai_010_004"},
-    # {"dataset": "hypersim", "scene_id": "ai_010_005"},
-    # {"dataset": "hypersim", "scene_id": "ai_012_005"},
-    # {"dataset": "hypersim", "scene_id": "ai_035_001"},
+    {"dataset": "", "scene_id": ""},
 ]
 
 

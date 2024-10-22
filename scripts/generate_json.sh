@@ -44,5 +44,5 @@ fi
 
 
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-python $(dirname "$0")/../dreamscene/renderer.py \
+python $(dirname "$0")/../scenecraft/renderer.py \
             --dataset="$DATASET" --data-root="$DATA_ROOT" --output-path="$OUTPUT_PATH" --jsonl-path="$JSONL_PATH" --limit "$LIMIT" --generate-json ${@:3}
