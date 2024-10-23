@@ -156,12 +156,9 @@ We will provide more details and release layout data examples/scene models soon.
 
 ## TODO
 
-*You guys could try SceneCraft **now**; And we will provide more detailed information.*
-
-- [ ] Release instructions for inference and visualization
-- [ ] Release instructions for scene generation
+- [ ] Release detailed instructions for generation and visualization
 - [ ] Release layout examples
-- [x] Instructions for preparing diffusion model
+- [x] Release training code
 - [x] Instructions for preparing data
 
 
