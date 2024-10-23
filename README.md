@@ -15,14 +15,6 @@
 We introduce SceneCraft, an innovative framework for generating complex, detailed indoor scenes from textual descriptions and spatial layouts. By leveraging a rendering-based pipeline, and a layout-conditioned diffusion model, our work effectively converts 3D semantic layouts into multi-view 2D images and learns a final scene representation that is not only consistent and realistic but also adheres closely to user specifications. Please check out project page and paper for more details. The open-source release of our code and dataset promises to further empower research and development in this exciting domain. <br><br>
 
 
-## TODO
-
-- [ ] Release instructions for inference and visualization
-- [ ] Release instructions for scene generation
-- [ ] Release layout examples
-- [x] Instructions for preparing diffusion model
-- [x] Instructions for preparing data
-
 ## BibTeX
 If you find our work useful in your research, please consider citing our paper:
 ```bibtex
@@ -160,3 +152,19 @@ Check the configurations at `scenecraft/configs/method` and run the following sc
 ```
 
 We will provide more details and release layout data examples/scene models soon.
+
+
+## TODO
+
+*You guys could try SceneCraft **now**; And we will provide more detailed information.*
+
+- [ ] Release instructions for inference and visualization
+- [ ] Release instructions for scene generation
+- [ ] Release layout examples
+- [x] Instructions for preparing diffusion model
+- [x] Instructions for preparing data
+
+
+## Acknowledgement
+
+Thansk for these excellent opensource works: [nerfstudio](https://github.com/nerfstudio-project/nerfstudio); [diffuser](https://github.com/huggingface/diffusers).
