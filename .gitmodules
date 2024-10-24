@@ -1,0 +1,3 @@
+[submodule "thirdparty/ml-hypersim"]
+	path = thirdparty/ml-hypersim
+	url = https://github.com/apple/ml-hypersim/

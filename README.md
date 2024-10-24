@@ -37,7 +37,7 @@ Clone and setup nerfstudio (better follow the version specified below).
 pip install nerfstudio==0.3.4
 
 # setup scenecraft
-git clone https://github.com/OrangeSodahub/SceneCraft.git
+git --recurse-submodules clone https://github.com/OrangeSodahub/SceneCraft.git
 
 cd SceneCraft/
 pip install [-e] .
