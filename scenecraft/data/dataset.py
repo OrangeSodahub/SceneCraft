@@ -1158,7 +1158,7 @@ class HypersimDataset(torch.utils.data.Dataset):
         all_scenes = list(filter(lambda x: x.startswith('ai'), all_scenes))
         with open(SPLIT_PATHS['hypersim']['train'], 'r') as file:
             avail_scene = [line.strip() for line in file.readlines()]
-        self.split_available_scenes = list(filter(lambda x: x in avail_scene, all_scenes)).sort()
+        self.split_available_scenes = sorted(filter(lambda x: x in avail_scene, all_scenes))
         if self.scene_ids:
             assert set(self.scene_ids).issubset(set(self.split_available_scenes)), f"Given scene {self.scene_ids} not entirely exist in splits {split}."
             self.split_available_scenes = list(filter(lambda x: x in self.scene_ids, self.split_available_scenes))
