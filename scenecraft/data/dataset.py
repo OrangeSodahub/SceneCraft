@@ -1261,8 +1261,8 @@ class HypersimDataset(torch.utils.data.Dataset):
         all_images = []
         image_path = os.path.join(scene_path, "images", f"scene_{camera}_final_preview")
         geometry_path = os.path.join(scene_path, "images", f"scene_{camera}_geometry_hdf5")
-        image_files = list(filter(lambda fname: fname.endswith('.color.jpg'), os.listdir(image_path)))
-        semantic_files = list(filter(lambda fname: fname.endswith('.semantic.hdf5'), os.listdir(geometry_path)))
+        image_files = list(sorted(filter(lambda fname: fname.endswith('.color.jpg'), os.listdir(image_path))))
+        semantic_files = list(sorted(filter(lambda fname: fname.endswith('.semantic.hdf5'), os.listdir(geometry_path))))
         all_images = np.stack([np.array(Image.open(os.path.join(image_path, image_file))) for image_file in image_files]) # N×H×W
         selected_ids = list(map(lambda image_file: image_file[:-10], image_files))
         semantic_images = np.stack([np.array(h5py.File(os.path.join(geometry_path, semantic_file))['dataset'][:]).astype(np.uint8) for semantic_file in semantic_files])
@@ -1305,7 +1305,7 @@ class HypersimDataset(torch.utils.data.Dataset):
         with h5py.File(bounding_box_object_aligned_2d_extents_file,     "r") as f: bounding_box_object_aligned_2d_extents     = f["dataset"][:] # M×3
         with h5py.File(bounding_box_object_aligned_2d_orientation_file, "r") as f: bounding_box_object_aligned_2d_orientation = f["dataset"][:] # M×3×3
         with h5py.File(bounding_box_object_aligned_2d_positions_file,   "r") as f: bounding_box_object_aligned_2d_positions   = f["dataset"][:] # M×3
-        frame_depth_files = list(filter(lambda fname: fname.endswith("depth_meters.hdf5"), os.listdir(geometry_path)))
+        frame_depth_files = list(sorted(filter(lambda fname: fname.endswith("depth_meters.hdf5"), os.listdir(geometry_path))))
         frame_depths = np.array(list(map(lambda fname: h5py.File(os.path.join(geometry_path, fname), "r")["dataset"][:], frame_depth_files)), dtype=np.float32)
         mask = np.isnan(frame_depths)
         frame_depths[~mask] = frame_depths[~mask] # [N, H, W] NOTE: do not multiply with `meters_per_asset_unit`
