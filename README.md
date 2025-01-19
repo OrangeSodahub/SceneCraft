@@ -130,6 +130,9 @@ data
 |   |   ├── layout.json
 ```
 
+The interface is adapted from nerfstudio viewer, where developers could put/remove/edge objects/cameras. Click `EXPORT` to save layouts/cameras to `.json` files. (For those who want more customizations, source code of this interface is at `thirdparty/nerfstudio/nerfstudio/viewer_legacy`)
+<img src="assets/webgui.png" width="100%"/>
+
 **Step2**: run the following script to get layout data from raw data:
 
 ```bash
@@ -148,7 +151,7 @@ Check the configurations at `scenecraft/configs/method` and run the following sc
 ```bash
 # set RECORD to track results via wandb
 # set DEBUG to log more detaild infos and for debugging
-[RECORD=True] [DEBUG=True] ns-train ${method_name} [--machine.num-devices ${num_gpus}]
+[RECORD=1] [DEBUG=1] ns-train ${method_name} [--machine.num-devices ${num_gpus}]
 ```
 
 We will provide more details and release layout data examples/scene models soon.

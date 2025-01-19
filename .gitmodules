@@ -1,3 +1,7 @@
 [submodule "thirdparty/ml-hypersim"]
 	path = thirdparty/ml-hypersim
 	url = https://github.com/apple/ml-hypersim/
+[submodule "thirdparty/nerfstudio"]
+	path = thirdparty/nerfstudio
+	url = https://github.com/OrangeSodahub/nerfstudio.git
+	branch = layout
