@@ -130,7 +130,7 @@ data
 |   |   ├── layout.json
 ```
 
-The interface is adapted from nerfstudio viewer, where developers could put/remove/edge objects/cameras. Click `EXPORT` to save layouts/cameras to `.json` files. (For those who want more customizations, source code of this interface is at `thirdparty/nerfstudio/nerfstudio/viewer_legacy`)
+The interface is adapted from nerfstudio viewer, where developers could put/remove/edit objects/cameras. Click `EXPORT` to save layouts/cameras to `.json` files. (For those who want more customizations, source code of this interface is at `thirdparty/nerfstudio/nerfstudio/viewer_legacy`)
 <img src="assets/webgui.png" width="100%"/>
 
 **Step2**: run the following script to get layout data from raw data:
