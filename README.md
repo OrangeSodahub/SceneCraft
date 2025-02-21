@@ -61,9 +61,9 @@ Run the following script to convert preprocessed data to layout data (check data
 
 ```bash
 bash scripts/prepare_dataset.sh \
-      ${DATASET}              # choose from [Scannetpp, Hypersim]
-      ${LIMIT}                # limit number of images per scene, set to 100
-      ${GPUS}                 # number of gpus to use
+      $DATASET                # choose from [Scannetpp, Hypersim]
+      $LIMIT                  # limit number of images per scene, set to 100
+      $GPUS                   # number of gpus to use
       [--split]               # choose from ['train', 'val', 'all] for scannet++
       [--save-depth]          # store True, whether to save depth maps
       [--voxel-size]          # for scannet++ voxelization, set to 0.2; no use no voxelization
@@ -72,7 +72,7 @@ bash scripts/prepare_dataset.sh \
 Generate JSONL data for efficient use of training (keep same settings as above):
 
 ```bash
-bash scripts/generate_json.sh ${DATASET} ${LIMIT} [--voxel-size]
+bash scripts/generate_json.sh $DATASET $LIMIT [--voxel-size]
 ```
 
 The expected well-perpared data (e.g. scannet++) structure of directory:
@@ -99,7 +99,7 @@ Run the following script to train controlnets model (check model and data paths 
 
 ```bash
 bash scripts/train_controlnet_sd.sh \
-      ${DATASET}                    # choose from [Scannetpp, Hypersim]
+      $DATASET                      # choose from [Scannetpp, Hypersim]
       [--condition_type]            # default one_hot
       [--conditioning_channels]     # default 8, should be less than 16
       [--enable_depth_cond]         # use depth condition
@@ -107,7 +107,7 @@ bash scripts/train_controlnet_sd.sh \
       [--resume_from_checkpoint]    # e.g. latest or .../checkpoint-1000
       [--report_to]                 # e.g. wandb
 
-# e.g.
+# an example:
 bash scripts/train_controlnet_sd.sh hypersim --condition_type one_hot --conditioning_channels 8 --enable_depth_cond --controlnet_conditioning_scale 3.5 1.5
 ```
 
@@ -156,10 +156,44 @@ Check the configurations at `scenecraft/configs/method` and run the following sc
 
 We will provide more details and release layout data examples/scene models soon.
 
+## Visualization
+
+We provide comprehensive visualization scripts at `scripts/generate_outputs.py`, which supports 5 keywords: layout, diffusion, nerf, mesh, point.
+
+1. To visualize the rendered layout data, please set `--layout` as below:
+
+```bash
+python scripts/generate_outputs.py --layout --dataset $DATASET --scene_id $SCENE_ID [--voxel_size $VOXEL_SIZE]
+
+# an example
+python scripts/generate_outputs.py --layout --dataset hypersim --scene_id ai_001_005
+```
+
+2. To visualize the generations of 2d diffusion model, please set  `--diffusion`:
+
+```bash
+python scripts/generate_outputs.py --diffusion --dataset $DATASET --scene_id $SCENE_ID --prompt $PROMPT \
+            [--base_model_path] \  # please refer to source code for more details
+            [--checkpoint_path] \
+            [--checkpoint_subfolder] \
+
+# an example
+python scripts/generate_outputs.py --diffusion --dataset hypersim --scene_id ai_001_005 --prompt "This is a bedroom painted by Van Gogh."
+```
+
+3. To visualize the rendering results of trained nerf model, please set `--nerf`:
+
+```bash
+
+python scripts/generate_outputs.py --nerf --dataset $DATASET --scene_id $SCENE_ID --load_config $PATH_TO_YML_FILE
+
+# an example
+python scripts/generate_outputs.py --nerf --dataset hypersim --scene_id ai_001_005 --load_config ROOT/outputs/xxx/xxx.yml
+```
 
 ## TODO
 
-- [ ] Release detailed instructions for generation and visualization
+- [x] Release detailed instructions for generation and visualization
 - [ ] Release layout examples
 - [x] Release training code
 - [x] Instructions for preparing data
