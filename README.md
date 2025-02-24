@@ -152,6 +152,9 @@ Check the configurations at `scenecraft/configs/method` and run the following sc
 # set RECORD to track results via wandb
 # set DEBUG to log more detaild infos and for debugging
 [RECORD=1] [DEBUG=1] ns-train ${method_name} [--machine.num-devices ${num_gpus}]
+
+# an example
+RECORD=1 ns-train nerfacto-huge2 --machine.num-devices 2
 ```
 
 We will provide more details and release layout data examples/scene models soon.
