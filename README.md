@@ -1,19 +1,12 @@
 # SceneCraft: Layout-Guided 3D Scene Generation
 
-<a href="https://github.com/OrangeSodahub" style="color:blue;">Xiuyu Yang*</a> ·
-<a href="https://yunzeman.github.io/" style="color:blue;">Yunze Man*</a> ·
-<a href="https://scholar.google.com/citations?user=_m5__wUAAAAJ" style="color:blue;">Jun-Kun Chen</a> ·
-<a href="https://yxw.web.illinois.edu/" style="color:blue;">Yu-Xiong Wang</a>
-
-**[NeurIPS 2024]** [[`Project Page`](https://orangesodahub.github.io/SceneCraft/)] [[`arXiv`](http://arxiv.org/abs/2410.09049)] [[`pdf`](https://arxiv.org/pdf/2410.09049)] [[`BibTeX`](#BibTex)] [[`License`](https://github.com/OrangeSodahub/SceneCraft?tab=MIT-1-ov-file)]
-
-
-## About
-### TL;DR We generate complex 3D scenes conditioned on <span style="color: red">free-form layout</span> and <span style="color: red">viewpoints</span>.
+TL;DR We generate complex 3D scenes conditioned on free-form layout and viewpoints.
 
 <img src="assets/teaser.gif" width="100%"/>
-We introduce SceneCraft, an innovative framework for generating complex, detailed indoor scenes from textual descriptions and spatial layouts. By leveraging a rendering-based pipeline, and a layout-conditioned diffusion model, our work effectively converts 3D semantic layouts into multi-view 2D images and learns a final scene representation that is not only consistent and realistic but also adheres closely to user specifications. Please check out project page and paper for more details. The open-source release of our code and dataset promises to further empower research and development in this exciting domain. <br><br>
 
+> [**SceneCraft: Layout-Guided 3D Scene Generation**](https://orangesodahub.github.io/SceneCraft/)                
+> Xiuyu Yang*, Yunze Man*, Jun-Kun Chen, Yu-Xiong Wang (* equal contribution)         
+> *NeurIPS 2024 ([arXiv 2410.09049](http://arxiv.org/abs/2410.09049))*
 
 ## BibTeX
 If you find our work useful in your research, please consider citing our paper:
