@@ -113,7 +113,7 @@ We use nerfacto from nerfstudio as the scene models. To generate a scene:
 
 **Step1**: this step is only needed for **scene layout drawn by ourselves**.
 
-Use this [webgui](https://orangesodahub.github.io/nerfstudio/) to draw your own layout, then export the layout and camera data files to `ROOT/data/custom/(scene_id)/` which should be:
+Use this [webgui](https://orangesodahub.github.io/nerfstudio_3DLayout/) to draw your own layout, then export the layout and camera data files to `ROOT/data/custom/(scene_id)/` which should be:
 
 ```text
 data
@@ -156,7 +156,7 @@ We will provide more details and release layout data examples/scene models soon.
 
 We provide comprehensive visualization scripts at `scripts/generate_outputs.py`, which supports 5 keywords: layout, diffusion, nerf, mesh, point.
 
-1. To visualize the rendered layout data, please set `--layout` as below:
+1. To visualize the rendered 2D layout data, please set `--layout` as below:
 
 ```bash
 python scripts/generate_outputs.py --layout --dataset $DATASET --scene_id $SCENE_ID [--voxel_size $VOXEL_SIZE]
@@ -185,6 +185,13 @@ python scripts/generate_outputs.py --nerf --dataset $DATASET --scene_id $SCENE_I
 
 # an example
 python scripts/generate_outputs.py --nerf --dataset hypersim --scene_id ai_001_005 --load_config ROOT/outputs/xxx/xxx.yml
+```
+
+4. To visualize the 3D layout data (through Open3D), refer to `scripts/layout_tools.py` or [here](https://github.com/OrangeSodahub/SceneCraft/blob/068fbac598ca09e969e503d8bd4982881ffbf131/scripts/layout_tools.py#L146):
+
+```bash
+
+python scripts/layout_tools.py --convert_to_open3d --layout_file $PATH/TO/FILE.json
 ```
 
 ## TODO
